@@ -1,0 +1,59 @@
+<mat-card-header *ngIf="httService.loggedIn()">
+    <mat-card-title class="fixed" >ReportAbuse</mat-card-title>
+</mat-card-header>
+
+<div class="container" >
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- title Column -->
+    <ng-container matColumnDef="postid">
+        <mat-header-cell *matHeaderCellDef> Post Id </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.postid}} </mat-cell>
+    </ng-container>
+
+    <!-- status Column -->
+    <ng-container matColumnDef="posteduser">
+        <mat-header-cell *matHeaderCellDef> Posted User</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.postedname}} </mat-cell>
+    </ng-container>
+
+    <!-- resp Column -->
+    <ng-container matColumnDef="reporteduser">
+        <mat-header-cell *matHeaderCellDef> Reported User </mat-header-cell>
+        <mat-cell *matCellDef="let element">element.reportedname </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="postdetails">
+        <mat-header-cell *matHeaderCellDef>Post Details </mat-header-cell>
+        <mat-cell *matCellDef="let element"> element.postdetails </mat-cell>
+    </ng-container>
+    <!-- L_resp Column -->
+    <ng-container matColumnDef="category">
+        <mat-header-cell *matHeaderCellDef>Category </mat-header-cell>
+        <mat-cell *matCellDef="let element"> element.category </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef>Action </mat-header-cell>
+        <mat-cell *matCellDef="let element"> element.action </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="posteddate">
+        <mat-header-cell *matHeaderCellDef>Posted Date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> element.posteddate </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="reporteddate">
+        <mat-header-cell *matHeaderCellDef>Reported Date </mat-header-cell>
+        <mat-cell *matCellDef="let element"> element.reporteddate </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="disposeddate">
+        <mat-header-cell *matHeaderCellDef>Disposed Date</mat-header-cell>
+        <mat-cell *matCellDef="let element"> element.disposeddate </mat-cell>
+    </ng-container>
+
+    <!-- Modified Column -->
+ 
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+</div>

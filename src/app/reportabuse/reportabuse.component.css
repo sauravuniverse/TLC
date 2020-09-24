@@ -1,0 +1,21 @@
+.mat-card{
+    background: linear-gradient(to left, #00ffff 0%, #0066ff 100%);
+      border-bottom-color: whitesmoke;
+      padding: 0px;
+    }
+    .mat-header-cell {
+      background-color: #292b2c;
+      color: whitesmoke;
+    }
+    .mat-cell {
+      color: whitesmoke;
+    
+    }
+    .mat-row{
+      background-color: #292b2c;
+      border-bottom-color: whitesmoke;
+      color: white;
+    }
+    table{
+      width: 100%;
+    }

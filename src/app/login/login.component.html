@@ -1,0 +1,46 @@
+<mat-card>
+  <mat-card-title>Login</mat-card-title>
+  <form [formGroup]="loginFormGroup">
+    <mat-card-content>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Select Option</mat-label>
+          <mat-select [(ngModel)]="selectedOption" (onSelectionChange)="onSelect($event)">
+            <mat-option style="width:2000px; background-color: red; font-size: 15px;" *ngFor="let options of dropdownist" [value]="options.value">
+              {{options.viewValue}}
+            </mat-option>
+          </mat-select>
+
+        </mat-form-field>
+        
+      </div>
+
+      <p>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Enter an email" (input)="setEmail($event)" [formControl]="email"
+            required>
+          <mat-error *ngIf="email.invalid ">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field>
+          <input type="password" matInput placeholder="Password" (input)="setPassword($event)" matInput
+            formControlName="password" [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </p>
+
+
+      <mat-card-actions>
+        <button mat-button (click)="validateLogin()">Login</button>
+        <button mat-button>Forget Password</button>
+
+      </mat-card-actions>
+
+    </mat-card-content>
+  </form>
+</mat-card>
