@@ -15,13 +15,18 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatTableModule } from "@angular/material/table";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { JobpostComponent } from './jobpost/jobpost.component';
+import { ProfileComponent } from './profile/profile.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+
+
 
 @NgModule({ 
   declarations: [
     AppComponent,
     LoginComponent,
     ReportabuseComponent,
-    JobpostComponent
+    JobpostComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +40,8 @@ import { JobpostComponent } from './jobpost/jobpost.component';
     MatTableModule,
     MatSnackBarModule,
     ToastrModule.forRoot(),
+    MatExpansionModule
+    
   ],
   providers: [AuthGuard,
     {provide:HTTP_INTERCEPTORS,useClass:TokenInteceptorService,multi:true}],
