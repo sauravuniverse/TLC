@@ -112,25 +112,24 @@
                     <form>
                         <mat-form-field appearance="outline" id="padng">
                             <mat-label>Username</mat-label>
-                            <input matInput [disabled]="!isenabled" value="Username" placeholder="Placeholder">
+                            <input matInput [disabled]="!isenabled" value="Username">
                             <mat-icon matSuffix>person</mat-icon>
                         </mat-form-field>
                         <mat-form-field appearance="outline" id="padng">
                             <mat-label>Email</mat-label>
-                            <input matInput disabled value="User@email.com" placeholder="Placeholder">
+                            <input matInput disabled value="User@email.com">
                             <mat-icon matSuffix>email</mat-icon>
                         </mat-form-field>
                         <mat-form-field appearance="outline" id="padng">
                             <mat-label>Phone</mat-label>
-                            <input matInput disabled value="**********" placeholder="Placeholder">
+                            <input matInput disabled value="**********">
                             <mat-icon matSuffix>phone</mat-icon>
                         </mat-form-field>
                         <mat-form-field appearance="outline" id="padng">
                             <mat-label>City</mat-label>
-                            <input matInput value="SomeWhereOnEarth"  [disabled]="!isenabled" placeholder="Placeholder">
+                            <input matInput value="SomeWhereOnEarth"  [disabled]="!isenabled">
                             <mat-icon matSuffix>location_city</mat-icon>
                         </mat-form-field>
-    
                     </form> 
                 </div>
                 <div class="col-lg-4" style="text-align: center;" id="padng">
@@ -161,7 +160,7 @@
                             <div class="row" id="padng">
                                 <h2 id="subtitle">Role</h2>
                             </div>
-                            <div class="row" style="justify-content: left;" id="padng">
+                            <div class="row" style="justify-content: center;" id="padng">
                                 <div class="col-xs-6 col-md-3" id="padng" *ngFor="let item of work" (click)="onWorkTap(item)">
                                  <mat-card  class="mat-elevation-z8" [ngClass]="{'default':item.dublicate==false,'roleActive':item.dublicate==true}">
                                     {{item.text}}
@@ -180,7 +179,7 @@
                             <div class="row" id="padng">
                                 <h2 id="subtitle">Qualification</h2>
                             </div>
-                            <div class="row" style="justify-content: left;" id="padng">
+                            <div class="row" style="justify-content: center;" id="padng">
                                 <div class="col-xs-6 col-md-3" id="padng" *ngFor="let item of qualification"(click)="onWorkTap(item)">
                                  <mat-card class="mat-elevation-z8" [ngClass]="{'default':item.dublicate==false,'qualActive':item.dublicate==true}">
                                     {{item.text}}
@@ -199,7 +198,7 @@
                             <div class="row" id="padng">
                                 <h2 id="subtitle">Subject</h2>
                             </div>
-                            <div class="row" style="justify-content: left;" id="padng">
+                            <div class="row" style="justify-content: center;" id="padng">
                                 <div class="col-xs-6 col-md-3" id="padng" *ngFor="let item of subject"(click)="onWorkTap(item)">
                                  <mat-card class="mat-elevation-z8"  [ngClass]="{'default':item.dublicate==false,'subActive':item.dublicate==true}">
                                     {{item.text}}
@@ -218,7 +217,7 @@
                             <div class="row" id="padng">
                                 <h2 id="subtitle">Language</h2>
                             </div>
-                            <div class="row" style="justify-content: left;" id="padng">
+                            <div class="row" style="justify-content: center;" id="padng">
                                 <div class="col-xs-6 col-md-3" id="padng" *ngFor="let item of language"(click)="onWorkTap(item)">
                                  <mat-card class="mat-elevation-z8" [ngClass]="{'default':item.dublicate==false,'langActive':item.dublicate==true}">
                                     {{item.text}}
@@ -243,7 +242,7 @@
             </div>
             <div class="row" style="justify-content: center;" id="padng">
                 <div class="col-xs-6 col-md-4" id="padng">
-                 <mat-card class="mat-elevation-z8" id="pBldrCrd">
+                 <mat-card class="mat-elevation-z8" id="pBldrCrd" (click)="openIntro()">
                     <div>
                         <div class="row" id="center">
                             <mat-icon>face</mat-icon>
@@ -255,7 +254,7 @@
                  </mat-card>
                 </div>
                 <div class="col-xs-6 col-md-4" id="padng"> 
-                 <mat-card class="mat-elevation-z8" id="pBldrCrd">
+                 <mat-card class="mat-elevation-z8" id="pBldrCrd" (click)="openExp()">
                     <div class="container-fluid">
                         <div class="row" id="center">
                             <mat-icon>work</mat-icon>
@@ -267,7 +266,7 @@
                  </mat-card>
                 </div> 
                 <div class="col-xs-6 col-md-4" id="padng">
-                  <mat-card class="mat-elevation-z8" id="pBldrCrd">
+                  <mat-card class="mat-elevation-z8" id="pBldrCrd" (click)="openSkill()">
                     <div class="container-fluid">
                         <div class="row" id="center">
                             <mat-icon>architecture</mat-icon>
@@ -279,7 +278,7 @@
                   </mat-card>
                 </div>
                 <div class="col-xs-6 col-md-4" id="padng">  
-                 <mat-card class="mat-elevation-z8" id="pBldrCrd">
+                 <mat-card class="mat-elevation-z8" id="pBldrCrd" (click)="openCert()">
                     <div class="container-fluid">
                         <div class="row" id="center">
                             <mat-icon>emoji_events</mat-icon>
@@ -291,7 +290,7 @@
                  </mat-card>
                 </div>
                 <div class="col-xs-6 col-md-4" id="padng"> 
-                 <mat-card class="mat-elevation-z8" id="pBldrCrd">
+                 <mat-card class="mat-elevation-z8" id="pBldrCrd"  (click)="openAddnInfo()">
                     <div class="container-fluid">
                         <div class="row" id="center">
                             <mat-icon>info</mat-icon>
@@ -303,7 +302,7 @@
                  </mat-card>
                 </div>
                 <div class="col-xs-6 col-md-4" id="padng"> 
-                 <mat-card class="mat-elevation-z8" id="pBldrCrd">
+                 <mat-card class="mat-elevation-z8" id="pBldrCrd" >
                     <div class="container-fluid">
                         <div class="row" id="center">
                             <mat-icon>article</mat-icon>

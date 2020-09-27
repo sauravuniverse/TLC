@@ -1,0 +1,97 @@
+<mat-accordion>
+    <mat-expansion-panel id="padng"  [(expanded)]="xpandStatusCrt">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Certifications
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="container-fluid">
+            <div class="row" id="padng">
+                <h2 id="title" mat-dialog-title>Add Certification</h2>
+            </div>
+            <div class="row" id="padng">
+                <h2 id="subtitle" mat-dialog-title>Members with a certification get an advantage</h2>
+            </div>
+            <div class="row" style="justify-content: center;">
+                <div class="col-sm-12 col-lg-8" style="text-align: center;">
+                    <form>
+                        <mat-form-field appearance="outline" id="padng">
+                            <mat-label>Certification name</mat-label>
+                            <input matInput  placeholder="Certification name">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" id="padng">
+                            <mat-label>Issuer</mat-label>
+                            <input matInput  placeholder="Issuer">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" id="padng">
+                            <mat-label>Issued date</mat-label>
+                            <input matInput [matDatepicker]="crtStrt" [max]="todayDate">
+                            <mat-datepicker-toggle matSuffix [for]="crtStrt"></mat-datepicker-toggle>
+                            <mat-datepicker #crtStrt></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" id="padng">
+                            <mat-label>Valid till</mat-label>
+                            <input matInput [matDatepicker]="crtEnd" [max]="todayDate">
+                            <mat-datepicker-toggle matSuffix [for]="crtEnd"></mat-datepicker-toggle>
+                            <mat-datepicker #crtEnd></mat-datepicker>
+                        </mat-form-field>
+                    </form>
+                </div>
+            </div>
+        </div> 
+        <mat-dialog-actions align="end" id="padng">
+            <button mat-raised-button class="cancel" (click)='xpandStatusCrt=xpandStatusCrt?false:true'>Cancel</button>
+            <button mat-raised-button class="save" (click)='xpandStatusCrt=xpandStatusCrt?false:true'>Save</button>
+        </mat-dialog-actions>   
+    </mat-expansion-panel>  
+    <mat-expansion-panel  id="padng"  [(expanded)]="xpandStatusHon">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Honors & Rewards
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="container-fluid">
+            <div class="row" id="padng">
+                <h2 id="title" mat-dialog-title>Add Honors & Rewards</h2>
+            </div>
+            <div class="row" id="padng">
+                <h2 id="subtitle" mat-dialog-title>List the recognition that you've earned to standout</h2>
+            </div>
+            <div class="row" style="justify-content: center;">
+                <div class="col-sm-12" style="text-align: center;">
+                    <form>
+                        <mat-form-field appearance="outline" id="padng">
+                            <mat-label>Title</mat-label>
+                            <input matInput  placeholder="Title">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" id="padng">
+                            <mat-label>Issuer</mat-label>
+                            <input matInput  placeholder="Issuer">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" id="padng">
+                            <mat-label>Issued date</mat-label>
+                            <input matInput [matDatepicker]="honStrt" [max]="todayDate">
+                            <mat-datepicker-toggle matSuffix [for]="honStrt"></mat-datepicker-toggle>
+                            <mat-datepicker #honStrt></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field style="width: 100%">
+                            <mat-label>Description</mat-label>
+                            <textarea matInput
+                                      cdkTextareaAutosize
+                                      #autosize="cdkTextareaAutosize"
+                                      cdkAutosizeMinRows="1"
+                                      cdkAutosizeMaxRows="5"></textarea>
+                        </mat-form-field>
+                    </form>
+                </div>
+            </div>
+        </div> 
+        <mat-dialog-actions align="end" id="padng">
+            <button mat-raised-button class="cancel" (click)='xpandStatusHon=xpandStatusHon?false:true'>Cancel</button>
+            <button mat-raised-button class="save" (click)='xpandStatusHon=xpandStatusHon?false:true'>Save</button>
+        </mat-dialog-actions>   
+    </mat-expansion-panel>  
+</mat-accordion>
+<mat-dialog-actions align="end" id="padng">
+    <button mat-raised-button class="cancel" mat-dialog-close>Close</button>
+</mat-dialog-actions>

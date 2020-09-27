@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDialog} from '@angular/material/dialog';
+import { IntroComponent } from './profileBuilder/intro/intro.component';
+import { WorkEduComponent } from './profileBuilder/work-edu/work-edu.component';
+import { SkillsComponent } from './profileBuilder/skills/skills.component';
+import { CertAwardComponent } from './profileBuilder/cert-award/cert-award.component';
+import { AddnInfoComponent } from './profileBuilder/addn-info/addn-info.component';
+
 
 
 @Component({
@@ -14,128 +21,177 @@ export class ProfileComponent implements OnInit {
   proPicUpdate : boolean = false;
   panelOpenState = false;
   work=[
-    {text:"Principal", row:2, col:0, dublicate:false},
-    {text:"Vice Principal", row:2, col:1, dublicate:false},
-    {text:"Headmistress", row:2, col:2, dublicate:false},
-    {text:"Headmaster", row:2, col:3, dublicate:false},
-    {text:"Primary Teacher", row:2, col:4, dublicate:false},
-    {text:"Middle School Teacher", row:3, col:0, dublicate:false},
-    {text:"High School Teacher", row:3, col:1, dublicate:false},
-    {text:"Higher Secondary Teacher", row:3, col:2, dublicate:false},
-    {text:"PU College Teacher", row:3, col:3, dublicate:false},
-    {text:"Director", row:3, col:4, dublicate:false},
-    {text:"Teacher", row:3, col:0, dublicate:false},
-    {text:"PGT", row:4, col:1, dublicate:false},
-    {text:"TGT", row:4, col:2, dublicate:false},
-    {text:"Coordinator", row:4, col:3, dublicate:false},
-    {text:"High School Coordinator", row:4, col:4, dublicate:false},
-    {text:"Primary School Coordinator", row:4, col:0, dublicate:false},
-    {text:"Junior School Principal", row:5, col:1, dublicate:false},
-    {text:"Senior School Principal", row:5, col:2, dublicate:false},
-    {text:"Admin Head", row:5, col:3, dublicate:false},
-    {text:"Nursery School Teacher", row:5, col:4, dublicate:false},
-    {text:"Kindergarten Teacher", row:5, col:0, dublicate:false},
-    {text:"Play School Teacher", row:6, col:1, dublicate:false},
-    {text:"Play School Coordinator", row:6, col:2, dublicate:false},
-    {text:"Special Needs Teacher", row:6, col:3, dublicate:false},
-    {text:"Lecturer", row:6, col:4, dublicate:false},
-    {text:"Assistant Professor", row:6, col:0, dublicate:false},
-    {text:"Associate Professor", row:7, col:1, dublicate:false},
-    {text:"Professor", row:7, col:2, dublicate:false},
-    {text:"Senior Professor", row:7, col:3, dublicate:false}
+    {text:"Principal", dublicate:false},
+    {text:"Vice Principal", dublicate:false},
+    {text:"Headmistress", dublicate:false},
+    {text:"Headmaster", dublicate:false},
+    {text:"Primary Teacher", dublicate:false},
+    {text:"Middle School Teacher", dublicate:false},
+    {text:"High School Teacher", dublicate:false},
+    {text:"Higher Secondary Teacher", dublicate:false},
+    {text:"PU College Teacher", dublicate:false},
+    {text:"Director", dublicate:false},
+    {text:"Teacher", dublicate:false},
+    {text:"PGT", dublicate:false},
+    {text:"TGT", dublicate:false},
+    {text:"Coordinator", dublicate:false},
+    {text:"High School Coordinator", dublicate:false},
+    {text:"Primary School Coordinator", dublicate:false},
+    {text:"Junior School Principal", dublicate:false},
+    {text:"Senior School Principal", dublicate:false},
+    {text:"Admin Head", dublicate:false},
+    {text:"Nursery School Teacher", dublicate:false},
+    {text:"Kindergarten Teacher", dublicate:false},
+    {text:"Play School Teacher", dublicate:false},
+    {text:"Play School Coordinator", dublicate:false},
+    {text:"Special Needs Teacher", dublicate:false},
+    {text:"Lecturer", dublicate:false},
+    {text:"Assistant Professor", dublicate:false},
+    {text:"Associate Professor", dublicate:false},
+    {text:"Professor", dublicate:false},
+    {text:"Senior Professor", dublicate:false}
 ]
 
 qualification = [
-    {text:"B.A", row:9, col:0, dublicate:false},
-    {text:"M.A", row:9, col:1, dublicate:false},
-    {text:"M.Phil", row:9, col:2, dublicate:false},
-    {text:"Ph.D", row:9, col:3, dublicate:false},
-    {text:"D.Ed", row:9, col:4, dublicate:false},
-    {text:"B.Ed", row:10, col:0, dublicate:false},
-    {text:"M.Ed", row:10, col:1, dublicate:false},
-    {text:"B.Sc", row:10, col:2, dublicate:false},
-    {text:"M.Sc", row:10, col:3, dublicate:false},
-    {text:"UGC NET", row:10, col:4, dublicate:false},
-    {text:"JRF", row:11, col:0, dublicate:false},
-    {text:"Post-Doctoral", row:11, col:1, dublicate:false},
-    {text:"CTET", row:11, col:2, dublicate:false},
-    {text:"NCC", row:11, col:3, dublicate:false},
-    {text:"BTC", row:11, col:4, dublicate:false}
+    {text:"B.A", dublicate:false},
+    {text:"M.A", dublicate:false},
+    {text:"M.Phil", dublicate:false},
+    {text:"Ph.D", dublicate:false},
+    {text:"D.Ed", dublicate:false},
+    {text:"B.Ed", dublicate:false},
+    {text:"M.Ed", dublicate:false},
+    {text:"B.Sc", dublicate:false},
+    {text:"M.Sc", dublicate:false},
+    {text:"UGC NET", dublicate:false},
+    {text:"JRF", dublicate:false},
+    {text:"Post-Doctoral", dublicate:false},
+    {text:"CTET", dublicate:false},
+    {text:"NCC", dublicate:false},
+    {text:"BTC", dublicate:false}
 ]
 
 subject = [
-    {text:"Science", row:13, col:0, dublicate:false},
-    {text:"Physics", row:13, col:1, dublicate:false},
-    {text:"Chemistry", row:13, col:2, dublicate:false},
-    {text:"Biology", row:13, col:3, dublicate:false},
-    {text:"Social Sciences", row:13, col:4, dublicate:false},
-    {text:"History", row:14, col:0, dublicate:false},
-    {text:"Commerce", row:14, col:1, dublicate:false},
-    {text:"Fashion Studies", row:14, col:2, dublicate:false},
-    {text:"Computer Science", row:14, col:3, dublicate:false},
-    {text:"Mathematics", row:14, col:4, dublicate:false},
-    {text:"Geography", row:15, col:0, dublicate:false},
-    {text:"Civics", row:15, col:1, dublicate:false},
-    {text:"Arts", row:15, col:2, dublicate:false},
-    {text:"Languages", row:15, col:3, dublicate:false},
-    {text:"Literature", row:15, col:4, dublicate:false},
-    {text:"Philosophy", row:16, col:0, dublicate:false},
-    {text:"Multimedia & Web Technology", row:16, col:1, dublicate:false},
-    {text:"Engineering Science", row:16, col:2, dublicate:false},
-    {text:"Marketing", row:16, col:3, dublicate:false},
-    {text:"Legal Studies", row:16, col:4, dublicate:false},
-    {text:"Japanese", row:17, col:0, dublicate:false},
-    {text:"Tibetan", row:17, col:1, dublicate:false},
-    {text:"Political Science", row:17, col:2, dublicate:false},
-    {text:"Biotechnology", row:17, col:3, dublicate:false},
-    {text:"Biochemistry", row:17, col:4, dublicate:false},
-    {text:"Economics", row:18, col:0, dublicate:false},
-    {text:"Home Science", row:18, col:1, dublicate:false},
-    {text:"Painting", row:18, col:2, dublicate:false},
-    {text:"Applied Arts", row:18, col:3, dublicate:false},
-    {text:"Sociology", row:18, col:4, dublicate:false},
-    {text:"Music", row:19, col:0, dublicate:false},
-    {text:"Physical Training", row:19, col:1, dublicate:false},
-    {text:"Health Education", row:19, col:2, dublicate:false},
-    {text:"Psychology", row:19, col:3, dublicate:false},
-    {text:"Massmedia Studies", row:19, col:4, dublicate:false}
+    {text:"Science", dublicate:false},
+    {text:"Physics", dublicate:false},
+    {text:"Chemistry", dublicate:false},
+    {text:"Biology", dublicate:false},
+    {text:"Social Sciences", dublicate:false},
+    {text:"History", dublicate:false},
+    {text:"Commerce", dublicate:false},
+    {text:"Fashion Studies", dublicate:false},
+    {text:"Computer Science", dublicate:false},
+    {text:"Mathematics", dublicate:false},
+    {text:"Geography", dublicate:false},
+    {text:"Civics", dublicate:false},
+    {text:"Arts", dublicate:false},
+    {text:"Languages", dublicate:false},
+    {text:"Literature", dublicate:false},
+    {text:"Philosophy", dublicate:false},
+    {text:"Multimedia & Web Technology", dublicate:false},
+    {text:"Engineering Science", dublicate:false},
+    {text:"Marketing", dublicate:false},
+    {text:"Legal Studies", dublicate:false},
+    {text:"Japanese", dublicate:false},
+    {text:"Tibetan", dublicate:false},
+    {text:"Political Science", dublicate:false},
+    {text:"Biotechnology", dublicate:false},
+    {text:"Biochemistry", dublicate:false},
+    {text:"Economics", dublicate:false},
+    {text:"Home Science", dublicate:false},
+    {text:"Painting", dublicate:false},
+    {text:"Applied Arts", dublicate:false},
+    {text:"Sociology", dublicate:false},
+    {text:"Music", dublicate:false},
+    {text:"Physical Training", dublicate:false},
+    {text:"Health Education", dublicate:false},
+    {text:"Psychology", dublicate:false},
+    {text:"Massmedia Studies", dublicate:false}
 ]
 
 language = [
-    {text:"Engilsh", row:21, col:0,  dublicate:false},  
-    {text:"Urdu", row:21, col:1,  dublicate:false},
-    {text:"Hindi", row:21, col:2,  dublicate:false},
-    {text:"Bengali", row:21, col:3,  dublicate:false},
-    {text:"Marathi", row:21, col:4,  dublicate:false},
-    {text:"Arabic", row:22, col:0,  dublicate:false},
-    {text:"Telugu", row:22, col:1,  dublicate:false},
-    {text:"Sanskrit", row:22, col:2,  dublicate:false},
-    {text:"Spanish", row:22, col:3,  dublicate:false},
-    {text:"Assamese", row:22, col:4,  dublicate:false},
-    {text:"Kannada", row:23, col:0,  dublicate:false},
-    {text:"Punjabi", row:23, col:1,  dublicate:false},
-    {text:"French", row:23, col:2,  dublicate:false},
-    {text:"Russian", row:23, col:3,  dublicate:false},
-    {text:"German", row:23, col:4,  dublicate:false},
-    {text:"Malayalam", row:24, col:0,  dublicate:false},
-    {text:"Tamil", row:24, col:1,  dublicate:false},
-    {text:"Odiya", row:24, col:2,  dublicate:false}
+    {text:"Engilsh",dublicate:false},  
+    {text:"Urdu",dublicate:false},
+    {text:"Hindi",dublicate:false},
+    {text:"Bengali",dublicate:false},
+    {text:"Marathi",dublicate:false},
+    {text:"Arabic",dublicate:false},
+    {text:"Telugu",dublicate:false},
+    {text:"Sanskrit",dublicate:false},
+    {text:"Spanish",dublicate:false},
+    {text:"Assamese",dublicate:false},
+    {text:"Kannada",dublicate:false},
+    {text:"Punjabi",dublicate:false},
+    {text:"French",dublicate:false},
+    {text:"Russian",dublicate:false},
+    {text:"German",dublicate:false},
+    {text:"Malayalam",dublicate:false},
+    {text:"Tamil",dublicate:false},
+    {text:"Odiya",dublicate:false}
 ]
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
   edit(){
-     
+    this.isenabled = !this.isenabled;
      this.toggle = !this.toggle;
   }
   updatePPic(){
      console.log("filepicker");
   }
   onWorkTap(value) {
-    console.log(value.dublicate);
      value.dublicate = !value.dublicate;
-     console.log(value.dublicate)
+  }
+  openIntro() {
+    const dialogRef = this.dialog.open(IntroComponent, {
+    width: '100%',
+    height: '100%',
+    disableClose: true});
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  openExp() {
+    const dialogRef = this.dialog.open(WorkEduComponent, {
+    width: '100%',
+    height: '100%',
+    disableClose: true});
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  
+  openSkill() {
+    const dialogRef = this.dialog.open(SkillsComponent, {
+    width: '100%',
+    height: '100%',
+    disableClose: true});
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  openCert() {
+    const dialogRef = this.dialog.open(CertAwardComponent, {
+    width: '100%',
+    height: '100%',
+    disableClose: true});
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  openAddnInfo() {
+    const dialogRef = this.dialog.open(AddnInfoComponent, {
+    width: '100%',
+    height: '100%',
+    disableClose: true});
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 }

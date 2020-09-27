@@ -17,6 +17,14 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { JobpostComponent } from './jobpost/jobpost.component';
 import { ProfileComponent } from './profile/profile.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { IntroComponent } from './profile/profileBuilder/intro/intro.component';
+import { WorkEduComponent } from './profile/profileBuilder/work-edu/work-edu.component';
+import { SkillsComponent } from './profile/profileBuilder/skills/skills.component';
+import { CertAwardComponent } from './profile/profileBuilder/cert-award/cert-award.component';
+import { AddnInfoComponent } from './profile/profileBuilder/addn-info/addn-info.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 
@@ -26,7 +34,12 @@ import {MatExpansionModule} from '@angular/material/expansion';
     LoginComponent,
     ReportabuseComponent,
     JobpostComponent,
-    ProfileComponent
+    ProfileComponent,
+    IntroComponent,
+    WorkEduComponent,
+    SkillsComponent,
+    CertAwardComponent,
+    AddnInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +53,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatTableModule,
     MatSnackBarModule,
     ToastrModule.forRoot(),
-    MatExpansionModule
+    MatExpansionModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule
     
   ],
   providers: [AuthGuard,
