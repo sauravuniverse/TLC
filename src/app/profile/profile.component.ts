@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDialog} from '@angular/material/dialog';
@@ -16,6 +16,7 @@ import { AddnInfoComponent } from './profileBuilder/addn-info/addn-info.componen
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  @ViewChild('filePick') filePick: ElementRef;
   isenabled : boolean  = false;
   toggle : boolean  = false;
   proPicUpdate : boolean = false;
@@ -192,6 +193,9 @@ language = [
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+  openFilePicker(){
+    this.filePick.nativeElement.click();
   }
 
 }

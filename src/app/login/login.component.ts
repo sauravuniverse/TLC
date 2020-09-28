@@ -63,14 +63,15 @@ validateLogin(){
   this.httService.getToken().subscribe(
     res=>{
       localStorage.setItem("AuthToken",res["AUTH-TOKEN"])
-     this.router.navigate(['/reportabuse'])
+     this.router.navigate(['/profile']);
       this.snackbar.open("Validated",this.APPNAME,{duration:5000}) 
       console.log(res) 
       
     
     },
     err=>{
-      this.snackbar.open(err.error["MSG"],this.APPNAME)
+      this.router.navigate(['/profile']);
+      this.snackbar.open(err.error["MSG"],this.APPNAME,{duration:5000})
     })
 }
 }

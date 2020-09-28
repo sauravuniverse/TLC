@@ -11,12 +11,11 @@ import { from } from 'rxjs';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: "/ski", pathMatch: 'full' },
+  { path: '', redirectTo: "/login", pathMatch: 'full' },
   { path: "login", component: LoginComponent },
   { path: "reportabuse", component: ReportabuseComponent, canActivate: [AuthGuard]},
   { path: "jobpost", component: JobpostComponent, canActivate: [AuthGuard]},
   { path: "profile", component: ProfileComponent},
-  { path: "ski", component:CertAwardComponent},
  ];
 
 
