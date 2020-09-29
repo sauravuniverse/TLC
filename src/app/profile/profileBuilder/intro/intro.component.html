@@ -1,0 +1,74 @@
+<mat-accordion>
+    <mat-expansion-panel id="padng"  [(expanded)]="xpandStatusSum">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Summary
+        </mat-panel-title>
+        <mat-panel-description>
+          </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="container-fluid">
+        <div class="row" id="padng">
+            <h2 id="title">Summary</h2>
+        </div>
+        <div class="row" id="padng">
+            <h2 id="subtitle">Use summary to share what you do or the opportunities you're looking for</h2>
+        </div>
+        <div class="row" style="justify-content: center;" id="padng">
+            <div class="col" id="padng">
+             <mat-card  class="mat-elevation-z8">
+                    <mat-form-field style="width: 100%">
+                        <mat-label>Add Introduction</mat-label>
+                        <textarea matInput
+                                  cdkTextareaAutosize
+                                  #autosize="cdkTextareaAutosize"
+                                  cdkAutosizeMinRows="1"
+                                  cdkAutosizeMaxRows="5"></textarea>
+                    </mat-form-field>
+             </mat-card>
+            </div>
+        </div>    
+      </div>
+    <mat-dialog-actions align="end" id="padng">
+        <button mat-raised-button class="cancel" (click)='xpandStatusSum=xpandStatusSum?false:true'>Cancel</button>
+        <button mat-raised-button class="save" (click)='xpandStatusSum=xpandStatusSum?false:true'>Save</button>
+    </mat-dialog-actions>
+    </mat-expansion-panel>
+    <mat-expansion-panel id="padng" [(expanded)]="xpandStatusIntro">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Introduction
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="container-fluid">
+          <div class="row" id="padng">
+              <h2 id="title" mat-dialog-title>Introduction</h2>
+          </div>
+          <div class="row" id="padng">
+            <h2 id="subtitle"> Use introduction to share what you do or the opportunities you're looking for</h2>
+          </div>
+          <div class="row" style="justify-content: center;" id="padng">
+                  <div class="col" id="padng">
+                   <mat-card  class="mat-elevation-z8">
+                          <mat-form-field style="width: 100%">
+                              <mat-label>Add Introduction</mat-label>
+                              <textarea matInput
+                                        cdkTextareaAutosize
+                                        #autosize="cdkTextareaAutosize"
+                                        cdkAutosizeMinRows="1"
+                                        cdkAutosizeMaxRows="5"></textarea>
+                          </mat-form-field>
+                   </mat-card>
+                  </div>
+          </div>
+        </div>
+    <mat-dialog-actions align="end" id="padng">
+          <button mat-raised-button class="cancel" (click)='xpandStatusIntro=xpandStatusIntro?false:true'>Cancel</button>
+          <button mat-raised-button class="save" (click)='xpandStatusIntro=xpandStatusIntro?false:true'>Save</button>
+    </mat-dialog-actions>
+    </mat-expansion-panel>
+</mat-accordion>
+<mat-dialog-actions align="end" id="padng">
+    <button mat-raised-button class="cancel" mat-dialog-close>Close</button>
+</mat-dialog-actions>
+      

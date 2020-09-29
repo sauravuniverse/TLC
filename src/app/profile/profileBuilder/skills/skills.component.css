@@ -1,0 +1,39 @@
+#padng{
+    padding: 1%;
+}
+h2{
+    font-family: 'Open Sans';
+    font-weight: 100;
+   }
+#title{
+    font-size:xx-large;
+    font-family: 'Open Sans', sans-serif;
+}
+#subtitle{
+    font-size:small;
+    font-family: 'Open Sans', sans-serif;   
+}   
+.mat-card{
+    /* border: 5px solid #ffffff !important;
+    border-radius: 10px !important; */
+   width: 100%;
+   height: 100%;
+   font-family: 'Open Sans', sans-serif;
+   text-align: center;
+   font-weight: 500;
+   }
+   .default{
+    background-color:white ;
+  }
+  .SkillActive{
+    background-color: #494D57;
+    color: white;
+}
+.save{
+    background-color: #32CD32;
+    color: white;
+}
+.cancel{
+    background-color: #E3170D;
+    color: white;
+}

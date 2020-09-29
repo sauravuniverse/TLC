@@ -1,0 +1,99 @@
+<mat-accordion>
+    <mat-expansion-panel id="padng"  [(expanded)]="xpandStatusRef">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+            References
+        </mat-panel-title>
+        <mat-panel-description>
+          </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="container-fluid">
+        <div class="row" id="padng">
+            <h2 id="title">Add References</h2>
+        </div>
+        <div class="row" id="padng">
+            <h2 id="subtitle">List the references that you've(.doc,.pdf,.png,.jpeg)</h2>
+        </div>
+        <div class="row" style="justify-content: center;" id="padng">
+            <div class="col" id="padng">
+             <mat-card  class="mat-elevation-z8">
+                    <mat-form-field style="width: 100%">
+                        <mat-label>Refrence text</mat-label>
+                        <textarea matInput
+                                  cdkTextareaAutosize
+                                  #autosize="cdkTextareaAutosize"
+                                  cdkAutosizeMinRows="1"
+                                  cdkAutosizeMaxRows="5"></textarea>
+                    </mat-form-field>
+             </mat-card>
+            </div>
+        </div> 
+        <div class="row" style="justify-content: left;" id="padng">
+            <input type="file" accept=".doc,.pdf,.png,.jpeg">
+       </div>   
+      </div>
+    <mat-dialog-actions align="end" id="padng">
+        <button mat-raised-button class="cancel" (click)='xpandStatusRef=xpandStatusRef?false:true'>Cancel</button>
+        <button mat-raised-button class="save" (click)='xpandStatusRef=xpandStatusRef?false:true'>Save</button>
+    </mat-dialog-actions>
+    </mat-expansion-panel>
+    <mat-expansion-panel id="padng" [(expanded)]="xpandStatusResp">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Additional Responsibilities
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="container-fluid">
+          <div class="row" id="padng">
+              <h2 id="title" mat-dialog-title>Add Additional Responsibilities</h2>
+          </div>
+          <div class="row" id="padng">
+            <h2 id="subtitle">List the responsibilities that you've earned to standout</h2>
+          </div>
+          <div class="row" style="justify-content: center;" id="padng">
+                  <div class="col" id="padng">
+                   <mat-card  class="mat-elevation-z8">
+                          <mat-form-field style="width: 100%">
+                              <mat-label>Add your responsibilities</mat-label>
+                              <textarea matInput
+                                        cdkTextareaAutosize
+                                        #autosize="cdkTextareaAutosize"
+                                        cdkAutosizeMinRows="1"
+                                        cdkAutosizeMaxRows="5"></textarea>
+                          </mat-form-field>
+                   </mat-card>
+                  </div>
+          </div>
+        </div>
+    <mat-dialog-actions align="end" id="padng">
+          <button mat-raised-button class="cancel" (click)='xpandStatusResp=xpandStatusResp?false:true'>Cancel</button>
+          <button mat-raised-button class="save" (click)='xpandStatusResp=xpandStatusResp?false:true'>Save</button>
+    </mat-dialog-actions>
+    </mat-expansion-panel>
+    <mat-expansion-panel id="padng" [(expanded)]="xpandStatusRec">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Recommendations
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="container-fluid">
+          <div class="row" id="padng">
+              <h2 id="title" mat-dialog-title>Add Recommendations</h2>
+          </div>
+          <div class="row" id="padng">
+            <h2 id="subtitle">List the recommendations that you've (.doc, .pdf)</h2>
+          </div>
+          <div class="row" style="justify-content: left;" id="padng">
+                  <input type="file" name="fileUpload" accept=".doc,.pdf">
+          </div>
+        </div>
+    <mat-dialog-actions align="end" id="padng">
+          <button mat-raised-button class="cancel" (click)='xpandStatusRec=xpandStatusRec?false:true'>Cancel</button>
+          <button mat-raised-button class="save" (click)='xpandStatusRec=xpandStatusRec?false:true'>Save</button>
+    </mat-dialog-actions>
+    </mat-expansion-panel>
+</mat-accordion>
+<mat-dialog-actions align="end" id="padng">
+    <button mat-raised-button mat-dialog-close class="cancel">Close</button>
+</mat-dialog-actions>
+      

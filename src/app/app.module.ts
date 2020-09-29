@@ -15,13 +15,31 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatTableModule } from "@angular/material/table";
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { JobpostComponent } from './jobpost/jobpost.component';
+import { ProfileComponent } from './profile/profile.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { IntroComponent } from './profile/profileBuilder/intro/intro.component';
+import { WorkEduComponent } from './profile/profileBuilder/work-edu/work-edu.component';
+import { SkillsComponent } from './profile/profileBuilder/skills/skills.component';
+import { CertAwardComponent } from './profile/profileBuilder/cert-award/cert-award.component';
+import { AddnInfoComponent } from './profile/profileBuilder/addn-info/addn-info.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
+
 
 @NgModule({ 
   declarations: [
     AppComponent,
     LoginComponent,
     ReportabuseComponent,
-    JobpostComponent
+    JobpostComponent,
+    ProfileComponent,
+    IntroComponent,
+    WorkEduComponent,
+    SkillsComponent,
+    CertAwardComponent,
+    AddnInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +53,11 @@ import { JobpostComponent } from './jobpost/jobpost.component';
     MatTableModule,
     MatSnackBarModule,
     ToastrModule.forRoot(),
+    MatExpansionModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule
+    
   ],
   providers: [AuthGuard,
     {provide:HTTP_INTERCEPTORS,useClass:TokenInteceptorService,multi:true}],

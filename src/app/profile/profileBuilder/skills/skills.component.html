@@ -1,0 +1,67 @@
+<mat-accordion>
+    <mat-expansion-panel id="padng"  [(expanded)]="xpandStatusSkill">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Skills
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="container-fluid">
+            <div class="row" id="padng">
+                <h2 id="title">Skills<span id="subtitle">( *Select all that apply )</span></h2>
+            </div>
+            <div class="row" id="padng">
+                <h2 id="subtitle">Add the skills you want to be known for</h2>
+            </div>
+            <div class="row" style="justify-content: center;" id="padng">
+                <div class="col-xs-6 col-md-3" id="padng" *ngFor="let item of skill" (click)="onSkillTap(item)">
+                 <mat-card class="mat-elevation-z8" [ngClass]="{'default':item.dublicate==false,'SkillActive':item.dublicate==true}">
+                    {{item.text}}
+                 </mat-card>
+                </div>
+            </div>
+        </div>
+        <mat-dialog-actions align="end" id="padng">
+            <button mat-raised-button class="cancel" (click)='xpandStatusSkill=xpandStatusSkill?false:true'>Cancel</button>
+            <button mat-raised-button class="save" (click)='xpandStatusSkill=xpandStatusSkill?false:true'>Save</button>
+        </mat-dialog-actions>    
+    </mat-expansion-panel>
+    <mat-expansion-panel id="padng" [(expanded)]="xpandStatusLang">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Languages
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="container-fluid">
+            <div class="row" id="padng">
+                <h2 id="title">Add Language</h2>
+            </div>
+            <div class="row" style="justify-content: center;">
+                <div class="col-sm-12" style="text-align: center;">
+                    <mat-form-field appearance="outline" id="padng">
+                            <mat-label>Enter Languauge</mat-label>
+                            <input matInput  placeholder="Enter Language">
+                    </mat-form-field>
+                </div>    
+            </div>
+            <div class="row" style="justify-content: center;">
+                <div class="col-sm-12" style="text-align: center;">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Proficiency</mat-label>
+                        <mat-select [(ngModel)]="selectedProf" name="prof">
+                          <mat-option *ngFor="let prof of Proficiency" [value]="prof">
+                            {{prof}}
+                          </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>    
+            </div>
+        </div> 
+        <mat-dialog-actions align="end" id="padng">
+            <button mat-raised-button class="cancel" (click)='xpandStatusLang=xpandStatusLang?false:true'>Cancel</button>
+            <button mat-raised-button class="save" (click)='xpandStatusLang=xpandStatusLang?false:true'>Save</button>
+        </mat-dialog-actions>   
+    </mat-expansion-panel>
+</mat-accordion> 
+<mat-dialog-actions align="end" id="padng">
+    <button mat-raised-button class="cancel" mat-dialog-close>Close</button>
+</mat-dialog-actions>       

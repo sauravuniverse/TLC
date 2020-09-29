@@ -1,0 +1,121 @@
+<mat-accordion>
+    <mat-expansion-panel id="padng"  [(expanded)]="xpandStatusExp">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Work Experience
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="container-fluid">
+            <div class="row" id="padng">
+                <h2 id="title" mat-dialog-title>Add Experience </h2>
+            </div>
+            <div class="row" style="justify-content: center;">
+                <div class="col-sm-12" style="text-align: center;">
+                    <form>
+                        <mat-form-field appearance="outline" id="padng">
+                            <mat-label>Company</mat-label>
+                            <input matInput  placeholder="Company">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" id="padng">
+                            <mat-label>Designation</mat-label>
+                            <input matInput  placeholder="Designation">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" id="padng">
+                            <mat-label>Location</mat-label>
+                            <input matInput  placeholder="Location">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" id="padng">
+                            <mat-label>Start Date</mat-label>
+                            <input matInput [matDatepicker]="expStrt" [max]="todayDate">
+                            <mat-datepicker-toggle matSuffix [for]="expStrt"></mat-datepicker-toggle>
+                            <mat-datepicker #expStrt></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" id="padng">
+                            <mat-label>End Date</mat-label>
+                            <input matInput [matDatepicker]="expEnd" [max]="todayDate">
+                            <mat-datepicker-toggle matSuffix [for]="expEnd"></mat-datepicker-toggle>
+                            <mat-datepicker #expEnd></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field style="width: 100%" id="padng">
+                            <mat-label>Description</mat-label>
+                            <textarea matInput
+                                      cdkTextareaAutosize
+                                      #autosize="cdkTextareaAutosize"
+                                      cdkAutosizeMinRows="1"
+                                      cdkAutosizeMaxRows="5"></textarea>
+                        </mat-form-field>
+                    </form>
+                </div>
+            </div>
+        </div> 
+        <mat-dialog-actions align="end" id="padng">
+            <button mat-raised-button class="cancel" (click)='xpandStatusExp=xpandStatusExp?false:true'>Cancel</button>
+            <button mat-raised-button class="save" (click)='xpandStatusExp=xpandStatusExp?false:true'>Save</button>
+        </mat-dialog-actions>   
+    </mat-expansion-panel>  
+    <mat-expansion-panel  id="padng"  [(expanded)]="xpandStatusEdu">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Education
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="container-fluid">
+            <div class="row" id="padng">
+                <h2 id="title" mat-dialog-title>Add Education details</h2>
+            </div>
+            <div class="row" style="justify-content: center;">
+                <div class="col-sm-12" style="text-align: center;">
+                    <form>
+                        <mat-form-field appearance="outline" id="padng">
+                            <mat-label>College name</mat-label>
+                            <input matInput  placeholder="College name">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Qualification</mat-label>
+                            <mat-select [(ngModel)]="selectedValue" name="qual">
+                              <mat-option *ngFor="let qual of qualification" [value]="qual">
+                                {{qual}}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        <mat-form-field appearance="outline" id="padng">
+                            <mat-label>Field of study</mat-label>
+                            <input matInput  placeholder="Field of study">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" id="padng">
+                            <mat-label>Grade(optional)</mat-label>
+                            <input matInput  placeholder="Grade(optional)">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" id="padng">
+                            <mat-label>From</mat-label>
+                            <input matInput [matDatepicker]="stdyStrt" [max]="todayDate">
+                            <mat-datepicker-toggle matSuffix [for]="stdyStrt"></mat-datepicker-toggle>
+                            <mat-datepicker #stdyStrt></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" id="padng">
+                            <mat-label>To</mat-label>
+                            <input matInput [matDatepicker]="stdyEnd" [max]="todayDate">
+                            <mat-datepicker-toggle matSuffix [for]="stdyEnd"></mat-datepicker-toggle>
+                            <mat-datepicker #stdyEnd></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field style="width: 100%" id="padng">
+                            <mat-label>Description</mat-label>
+                            <textarea matInput
+                                      cdkTextareaAutosize
+                                      #autosize="cdkTextareaAutosize"
+                                      cdkAutosizeMinRows="1"
+                                      cdkAutosizeMaxRows="5"></textarea>
+                        </mat-form-field>
+                    </form>
+                </div>
+            </div>
+        </div> 
+        <mat-dialog-actions align="end" id="padng">
+            <button mat-raised-button class="cancel" (click)='xpandStatusEdu=xpandStatusEdu?false:true'>Cancel</button>
+            <button mat-raised-button class="save"(click)='xpandStatusEdu=xpandStatusEdu?false:true'>Save</button>
+        </mat-dialog-actions>   
+    </mat-expansion-panel>  
+</mat-accordion>
+<mat-dialog-actions align="end" id="padng">
+    <button mat-raised-button mat-dialog-close class="cancel">Close</button>
+</mat-dialog-actions>
