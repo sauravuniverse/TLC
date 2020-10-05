@@ -7,6 +7,7 @@ import { WorkEduComponent } from './profileBuilder/work-edu/work-edu.component';
 import { SkillsComponent } from './profileBuilder/skills/skills.component';
 import { CertAwardComponent } from './profileBuilder/cert-award/cert-award.component';
 import { AddnInfoComponent } from './profileBuilder/addn-info/addn-info.component';
+import { UserProfileService } from './user-profile.service';
 
 
 
@@ -129,13 +130,30 @@ language = [
     {text:"Tamil",dublicate:false},
     {text:"Odiya",dublicate:false}
 ]
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,public userService:UserProfileService) { }
+  username:string;
+  email:string;
+  mobile:string;
+  city:string;
+  user_details
 
   ngOnInit(): void {
+    this.userService.getUserData().subscribe(
+      res=>{console.log(res);
+        this.user_details = JSON.parse(res.toString())
+        this.username = this.user_details["username"];
+        this.email = this.user_details["email"];
+        this.mobile = this.user_details["mobile"];
+        this.city = this.user_details["city"];
+
+      }
+    )
+    
   }
   edit(){
     this.isenabled = !this.isenabled;
      this.toggle = !this.toggle;
+     
   }
   updatePPic(){
      console.log("filepicker");

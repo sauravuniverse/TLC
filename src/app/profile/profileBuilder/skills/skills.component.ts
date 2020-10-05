@@ -32,6 +32,7 @@ export class SkillsComponent implements OnInit {
   onSkillTap(item){
     item.dublicate = !item.dublicate;
   }
+  
 
 }
 

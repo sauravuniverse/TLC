@@ -112,22 +112,22 @@
                     <form>
                         <mat-form-field appearance="outline" id="padng">
                             <mat-label>Username</mat-label>
-                            <input matInput [disabled]="!isenabled" value="Username">
+                            <input matInput [disabled]="!isenabled" [(ngModel)]="username" [ngModelOptions]="{standalone: true}">
                             <mat-icon matSuffix>person</mat-icon>
                         </mat-form-field>
                         <mat-form-field appearance="outline" id="padng">
                             <mat-label>Email</mat-label>
-                            <input matInput disabled value="User@email.com">
+                            <input matInput disabled [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
                             <mat-icon matSuffix>email</mat-icon>
                         </mat-form-field>
                         <mat-form-field appearance="outline" id="padng">
                             <mat-label>Phone</mat-label>
-                            <input matInput disabled value="**********">
+                            <input matInput disabled [(ngModel)]="mobile" [ngModelOptions]="{standalone: true}">
                             <mat-icon matSuffix>phone</mat-icon>
                         </mat-form-field>
                         <mat-form-field appearance="outline" id="padng">
                             <mat-label>City</mat-label>
-                            <input matInput value="SomeWhereOnEarth"  [disabled]="!isenabled">
+                            <input matInput [disabled]="!isenabled" [(ngModel)]="city" [ngModelOptions]="{standalone: true}">
                             <mat-icon matSuffix>location_city</mat-icon>
                         </mat-form-field>
                     </form> 

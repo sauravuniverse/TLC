@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "reportabuse", component: ReportabuseComponent, canActivate: [AuthGuard]},
   { path: "jobpost", component: JobpostComponent, canActivate: [AuthGuard]},
-  { path: "profile", component: ProfileComponent},
+  { path: "profile", component: ProfileComponent, canActivate: [AuthGuard]},
  ];
 
 

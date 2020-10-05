@@ -12,7 +12,7 @@ export class TokenInteceptorService implements HttpInterceptor {
     let authService = this.injector.get(LoginService)
     let tokenizedReq = req.clone({
       setHeaders:{
-        Autharization:`Brearer ${authService.getTokenFromLocalStorage()}`
+        Authorization:`Brearer ${authService.getTokenFromLocalStorage()}`
       } 
     })
     return next.handle(tokenizedReq)
